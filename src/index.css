@@ -211,6 +211,16 @@ button {
 }
 
 /* introduction */
+.intro-container {
+  container-type: inline-size;
+}
+.intro-container > header {
+  @container (max-width: 600px) {
+    p {
+      display: none;
+    }
+  }
+}
 .intro-container > main {
   textarea {
     width: 100%;
