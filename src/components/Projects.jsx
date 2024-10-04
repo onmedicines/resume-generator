@@ -1,6 +1,3 @@
-import Plus from "../assets/Plus";
-import Trash from "../assets/Trash";
-
 export default function Projects({ projects, handleChange, handleAdd, handleDelete }) {
   return (
     <div className="projects-container">

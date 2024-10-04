@@ -149,7 +149,11 @@ export default function App() {
     const { name, value } = e.target;
     const newArray = projects.map((project) => {
       if (project.id === idToChange) {
-        return { ...project, [name]: value };
+        if (name === "technologiesUsed") {
+          return { ...project, technologiesUsed: value.split(/[\s,]+/) };
+        } else {
+          return { ...project, [name]: value };
+        }
       } else {
         return project;
       }
