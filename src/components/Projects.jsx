@@ -22,6 +22,10 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
                 </button>
               </header>
               <main>
+                <label>
+                  <span>Project name</span>
+                  <input type="text" name="projectName" value={projectName} />
+                </label>
                 <div className="duration">
                   <label>
                     <span>Start</span>
@@ -32,10 +36,6 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
                     <input type="text" name="end" value={end} />
                   </label>
                 </div>
-                <label>
-                  <span>Project name</span>
-                  <input type="text" name="projectName" value={projectName} />
-                </label>
                 <label>
                   <span>Technologies used</span>
                   <input type="text" name="technologiesUsed" value={techUsed} />
