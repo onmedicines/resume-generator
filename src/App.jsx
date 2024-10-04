@@ -108,6 +108,21 @@ export default function App() {
     setSkillSet(newArray);
   };
 
+  // projects
+  const handleChangeProject = (e, idToChange) => {
+    const { name, value } = e.target;
+    const newArray = projects.map((project) => {
+      if (project.id === idToChange) {
+        return { ...project, [name]: value };
+      } else {
+        return project;
+      }
+    });
+    setProjects(newArray);
+  };
+  const handleAddProject = (e) => {};
+  const handleDeleteProject = (e) => {};
+
   return (
     <>
       <header>
@@ -133,14 +148,14 @@ export default function App() {
       </header>
       <main>
         {preview ? (
-          <LiveResume personalDetails={personalDetails} education={education} />
+          <LiveResume personalDetails={personalDetails} education={education} skills={skillSet} projects={projects} />
         ) : (
           <div className="details-container">
             <Introduction />
             <Personal {...personalDetails} handleChange={handlePersonalDetailsChange} />
             <Education education={education} handleChange={handleEducationChange} handleAdd={handleAddEducation} handleDelete={handleDeleteEducation} />
             <Skills skillSet={skillSet} handleChange={handleSkillChange} handleDelete={handleSkillDelete} handleAdd={handleSkillAdd} />
-            <Projects projects={projects} />
+            <Projects projects={projects} handleAdd={handleAddProject} handleDelete={handleDeleteProject} handleChange={handleChangeProject} />
           </div>
         )}
       </main>

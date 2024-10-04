@@ -117,6 +117,11 @@ button {
   height: 75px;
   display: flex;
   justify-content: center;
+
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999;
 }
 #root > header > nav {
   width: 100%;

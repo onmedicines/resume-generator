@@ -16,7 +16,7 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
           const { id, projectName, technologiesUsed: techUsed, description, start, end } = project;
 
           return (
-            <div className="project">
+            <div key={id} className="project">
               <header>
                 <h1>PROJECT {index + 1}</h1>
                 <button onClick={(e) => handleDelete(e, id)} className="delete-button">
@@ -26,25 +26,25 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
               <main>
                 <label>
                   <span>Project name</span>
-                  <input type="text" name="projectName" value={projectName} />
+                  <input type="text" name="projectName" value={projectName} onChange={(e) => handleChange(e, id)} />
                 </label>
                 <div className="duration">
                   <label>
                     <span>Start</span>
-                    <input type="text" name="start" value={start} />
+                    <input type="text" name="start" value={start} onChange={(e) => handleChange(e, id)} />
                   </label>
                   <label>
                     <span>End</span>
-                    <input type="text" name="end" value={end} />
+                    <input type="text" name="end" value={end} onChange={(e) => handleChange(e, id)} />
                   </label>
                 </div>
                 <label>
                   <span>Technologies used</span>
-                  <input type="text" name="technologiesUsed" value={techUsed} />
+                  <input type="text" name="technologiesUsed" value={techUsed} onChange={(e) => handleChange(e, id)} />
                 </label>
                 <label>
                   <span>Description</span>
-                  <textarea name="description" rows={5}>
+                  <textarea name="description" rows={5} onChange={(e) => handleChange(e, id)}>
                     {description}
                   </textarea>
                 </label>
@@ -55,7 +55,9 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
 
         {/* footer */}
         <footer>
-          <button className="add-button">Add</button>
+          <button className="add-button" onClick={handleAdd}>
+            Add
+          </button>
         </footer>
       </main>
     </div>

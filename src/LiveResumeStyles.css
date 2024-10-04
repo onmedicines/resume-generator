@@ -1,4 +1,5 @@
 .live-resume {
   max-width: 900px;
-  background-color: steelblue;
+  box-shadow: 0 0 5px 2px rgb(204, 202, 202);
+  padding: 1rem 2rem;
 }

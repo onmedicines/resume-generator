@@ -1,8 +1,10 @@
 import "./LiveResumeStyles.css";
 
-export default function LiveResume({ personalDetails, education }) {
+export default function LiveResume({ personalDetails, education, skills, projects }) {
   const pd = personalDetails;
   const edu = education; // array
+  const sk = skills; // aray
+  const pj = projects; // array
 
   return (
     <div className="live-resume">
@@ -23,6 +25,24 @@ export default function LiveResume({ personalDetails, education }) {
                 {item.start} - {item.end}
               </p>
               <p>{item.location}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="skills-container">
+        {sk.map((item) => {
+          return <p className="skill">{item}</p>;
+        })}
+      </div>
+      <div className="projects-container">
+        {pj.map((item) => {
+          return (
+            <div className="project">
+              <p>{item.projectName}</p>
+              <p>{item.technologiesUsed}</p>
+              <p>{item.start}</p>
+              <p>{item.end}</p>
+              <p>{item.description}</p>
             </div>
           );
         })}
