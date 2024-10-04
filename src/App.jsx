@@ -15,7 +15,7 @@ export default function App() {
     github: "github.com/onmedicines",
     linkedin: "linkedin.com/in/onmedicines",
     email: "semwalanuragjune@gmail.com",
-    phoneNumber: "+91 9621547997",
+    phoneNumber: 1234567890,
     cityAndCountry: "Lucknow, India",
   };
   const initialEducationDetails = [
@@ -51,6 +51,10 @@ export default function App() {
   // personal details
   const handlePersonalDetailsChange = (e) => {
     const { name: nameAttr, value } = e.target;
+    if (nameAttr === "phoneNumber" && value >= 9999999999) {
+      setPersonalDetails(personalDetails);
+      return;
+    }
     setPersonalDetails({ ...personalDetails, [nameAttr]: value });
   };
 
@@ -120,8 +124,24 @@ export default function App() {
     });
     setProjects(newArray);
   };
-  const handleAddProject = (e) => {};
-  const handleDeleteProject = (e) => {};
+  const handleAddProject = (e) => {
+    const newArray = [
+      ...projects,
+      {
+        id: crypto.randomUUID(),
+        projectName: "",
+        technologiesUsed: "",
+        start: "",
+        end: "",
+        description: "",
+      },
+    ];
+    setProjects(newArray);
+  };
+  const handleDeleteProject = (e, idToRemove) => {
+    const newArray = projects.filter((project) => project.id !== idToRemove);
+    setProjects(newArray);
+  };
 
   return (
     <>

@@ -44,7 +44,7 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
                 </label>
                 <label>
                   <span>Description</span>
-                  <textarea name="description" rows={5} onChange={(e) => handleChange(e, id)}>
+                  <textarea name="description" rows={10} onChange={(e) => handleChange(e, id)}>
                     {description}
                   </textarea>
                 </label>
