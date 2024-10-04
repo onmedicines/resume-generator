@@ -215,6 +215,9 @@ button {
   container-type: inline-size;
 }
 .intro-container > header {
+  p {
+    color: rgb(95, 93, 93);
+  }
   @container (max-width: 600px) {
     p {
       display: none;
@@ -224,6 +227,7 @@ button {
 .intro-container > main {
   textarea {
     width: 100%;
+    font-size: calc(var(--normal-text-size) + 1px);
   }
 }
 
