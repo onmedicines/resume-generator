@@ -164,7 +164,9 @@ button {
   }
   h1 {
     color: var(--color-text);
+    position: relative;
   }
+
   span {
     position: relative;
 

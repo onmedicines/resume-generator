@@ -6,7 +6,9 @@ export default function Projects({ projects, handleChange, handleAdd, handleDele
     <div className="projects-container">
       <header>
         <span>5</span>
-        <h1>Projects</h1>
+        <div className="content">
+          <h1>Projects</h1>
+        </div>
       </header>
 
       <main>
