@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+// initial data
+import { initialEducationDetails, initialIntro, initialPersonalDetails, initialSkillSet, initialProjects } from "./assets/initialDetails";
+
 // Components
-import ToolBar from "./components/ToolBar";
 import Education from "./components/Education";
 import Personal from "./components/Personal";
 import Projects from "./components/Projects";
@@ -10,61 +12,6 @@ import LiveResume from "./LiveResume";
 import Introduction from "./components/Introduction";
 
 export default function App() {
-  const initialIntro = "I am Anurag Semwal, a passionate Web Designer and Developer with a strong foundation in HTML, CSS, and JavaScript. With experience in building responsive websites and applications, I aim to leverage my skills in front-end development and design to create engaging user experiences. My goal is to contribute to innovative projects while continuously learning and growing in the tech industry.";
-  const initialPersonalDetails = {
-    fullName: "Anurag Semwal",
-    github: "github.com/onmedicines",
-    linkedin: "linkedin.com/in/onmedicines",
-    email: "semwalanuragjune@gmail.com",
-    phoneNumber: 1234567890,
-    cityAndCountry: "Lucknow, India",
-  };
-  const initialEducationDetails = [
-    {
-      id: 0,
-      institute: "University of Lucknow",
-      qualification: "Bachelors of Computer Science",
-      start: "2021",
-      end: "2024",
-      location: "Lucknow, Uttar Pradesh",
-    },
-    {
-      id: 1,
-      institute: "Indian Institute of Technology (IIT) Kanpur",
-      qualification: "Master of Technology",
-      start: "2024",
-      end: "2026",
-      location: "Kanpur, Uttar Pradesh",
-    },
-  ];
-  const initialSkillSet = ["HTML", "CSS", "JavaScript", "React", "Node.js"];
-  const initialProjects = [
-    {
-      id: 251548318,
-      projectName: "Assignment Submission App",
-      technologiesUsed: ["Express.js", "Node.js", "HTML", "CSS", "EJS"],
-      description: "This app lets you create student and faculty IDs. Students can submit assignments for their respective subjects, and teachers can view those assignments.",
-      start: "June 2024",
-      end: "July 2024",
-    },
-    {
-      id: 562342998,
-      projectName: "Personal Portfolio Website",
-      technologiesUsed: ["HTML", "CSS", "JavaScript", "React"],
-      description: "A responsive personal portfolio website showcasing my projects, skills, and experience.",
-      start: "August 2024",
-      end: "September 2024",
-    },
-    {
-      id: 876543210,
-      projectName: "E-commerce Store",
-      technologiesUsed: ["React", "Node.js", "MongoDB", "Express.js"],
-      description: "An e-commerce platform that allows users to browse products, add them to their cart, and complete purchases.",
-      start: "October 2024",
-      end: "December 2024",
-    },
-  ];
-
   // state variables
   const [preview, setPreview] = useState(false);
   const [intro, setIntro] = useState(initialIntro);
