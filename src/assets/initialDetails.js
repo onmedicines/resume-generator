@@ -1,4 +1,4 @@
-const initialIntro = "I am Anurag Semwal, a passionate Web Designer and Developer with a strong foundation in HTML, CSS, and JavaScript. With experience in building responsive websites and applications, I aim to leverage my skills in front-end development and design to create engaging user experiences. My goal is to contribute to innovative projects while continuously learning and growing in the tech industry.";
+const initialIntro = "Passionate and detail-oriented web developer with a strong foundation in front-end and back-end technologies. Experienced in creating responsive, user-friendly websites and applications using HTML, CSS, JavaScript, and modern frameworks like React. Dedicated to continuous learning and delivering innovative, efficient digital solutions.";
 const initialPersonalDetails = {
   fullName: "James Taylor",
   github: "github.com/jamestaylor",
