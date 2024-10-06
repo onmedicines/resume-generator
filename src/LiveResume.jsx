@@ -1,6 +1,7 @@
+import MapPin from "./assets/MapPin";
 import "./LiveResumeStyles.css";
 
-export default function LiveResume({ personalDetails, education, skills, projects }) {
+export default function LiveResume({ intro, personalDetails, education, skills, projects }) {
   const pd = personalDetails;
   const edu = education; // array
   const sk = skills; // aray
@@ -8,44 +9,74 @@ export default function LiveResume({ personalDetails, education, skills, project
 
   return (
     <div className="live-resume">
-      <div className="personal-details-container">
-        <h1>{pd.fullName}</h1>
+      <div className="sidebar">
+        <div className="name-container">
+          <h1>{pd.fullName}</h1>
+          <p>
+            <MapPin /> {pd.cityAndCountry}
+          </p>
+        </div>
         <div className="contact-details">
-          <p>{pd.github}</p>
+          <h3>Contact Details</h3>
+          <p>{pd.phoneNumber}</p>
           <p>{pd.email}</p>
+          <p>{pd.linkedin}</p>
+          <p>{pd.github}</p>
+        </div>
+        <div className="skills-container">
+          <h3>Skills</h3>
+          {sk.join(", ")}
         </div>
       </div>
-      <div className="education-container">
-        {edu.map((item, index) => {
-          return (
-            <div key={index} className="institute">
-              <h1>{item.qualification}</h1>
-              <h2>{item.institute}</h2>
-              <p>
-                {item.start} - {item.end}
-              </p>
-              <p>{item.location}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="skills-container">
-        {sk.map((item) => {
-          return <p className="skill">{item}</p>;
-        })}
-      </div>
-      <div className="projects-container">
-        {pj.map((item) => {
-          return (
-            <div className="project">
-              <p>{item.projectName}</p>
-              <p>{item.technologiesUsed}</p>
-              <p>{item.start}</p>
-              <p>{item.end}</p>
-              <p>{item.description}</p>
-            </div>
-          );
-        })}
+      <div className="main">
+        <div className="intro">
+          <p>{intro}</p>
+        </div>
+        <div className="education-container">
+          <h1>Education</h1>
+          {edu.map((item, index) => {
+            return (
+              <div key={index} className="institute">
+                <header>
+                  <h3>{item.qualification}</h3>
+                  <p>
+                    {item.start} - {item.end}
+                  </p>
+                </header>
+                <main>
+                  <p>{item.institute}</p>
+                  <p>
+                    <MapPin /> {item.location}
+                  </p>
+                </main>
+              </div>
+            );
+          })}
+        </div>
+        <div className="projects-container">
+          <header>
+            <h1>Projects</h1>
+          </header>
+          <main>
+            {pj.map((item) => {
+              return (
+                <div className="project">
+                  <header>
+                    <p className="heading">
+                      <span className="project-name">{item.projectName}</span> | <span className="tech-used">{item.technologiesUsed.join(", ")}</span>
+                    </p>
+                    <p className="duration">
+                      {item.start} - {item.end}
+                    </p>
+                  </header>
+                  <main>
+                    <p className="description">{item.description}</p>
+                  </main>
+                </div>
+              );
+            })}
+          </main>
+        </div>
       </div>
     </div>
   );

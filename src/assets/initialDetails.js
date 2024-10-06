@@ -1,4 +1,4 @@
-const initialIntro = "Passionate and detail-oriented web developer with a strong foundation in front-end and back-end technologies. Experienced in creating responsive, user-friendly websites and applications using HTML, CSS, JavaScript, and modern frameworks like React. Dedicated to continuous learning and delivering innovative, efficient digital solutions.";
+const initialIntro = "Passionate and detail-oriented web developer with a strong foundation in front-end and back-end technologies. Experienced in creating responsive, user-friendly websites and applications. Dedicated to continuous learning and delivering innovative, efficient digital solutions.";
 const initialPersonalDetails = {
   fullName: "James Taylor",
   github: "github.com/jamestaylor",
